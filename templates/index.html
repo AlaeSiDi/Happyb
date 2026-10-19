@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Маленький день рождения для Лизы">
+    <title>Лизе — 21! </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <section class="password-screen" id="passwordScreen" aria-labelledby="passwordTitle">
+        <div class="password-card">
+            <div class="password-lock" aria-hidden="true">🔒</div>
+            <h1 id="passwordTitle">Введите пароль</h1>
+            <p class="password-description">У этого сюрприза есть секретный код…</p>
+            <form id="passwordForm" class="password-form">
+                <input id="sitePassword" name="password" type="password"
+                       inputmode="numeric" autocomplete="off"
+                       placeholder="Введи пароль" aria-describedby="passwordError" required>
+                <button type="submit" class="password-submit">Открыть сюрприз ✨</button>
+                <p id="passwordError" class="password-error" role="alert" aria-live="polite"></p>
+            </form>
+            <p class="password-note">Только для тебя </p>
+        </div>
+        <div class="password-sparkle sparkle-one" aria-hidden="true">✦</div>
+        <div class="password-sparkle sparkle-two" aria-hidden="true">♡</div>
+        <div class="password-sparkle sparkle-three" aria-hidden="true">✧</div>
+    </section>
+
+    <div id="birthdaySite" class="birthday-site" hidden>
+
+    <div class="particles" id="particles"></div>
+    <button class="music-toggle" id="musicToggle">♫</button>
+
+    <main>
+        <section class="section visible hero" id="hero">
+            <div class="floating-photo floating-cat floating-cat-1">
+                <img src="{{ url_for('static', filename='images/cat1.jpg') }}" alt="Котик">
+            </div>
+            <div class="floating-photo floating-cat floating-cat-2">
+                <img src="{{ url_for('static', filename='images/cat2.jpg') }}" alt="Котик">
+            </div>
+            <div class="floating-photo floating-lily floating-lily-1">
+                <img src="{{ url_for('static', filename='images/lily1.jpg') }}" alt="Лилия">
+            </div>
+
+            <div class="hero-card">
+                <p class="small-label">Сегодня особенный день</p>
+                <h1>Елизавета, тебе <span>21</span> </h1>
+                <p class="subtitle">Пусть этот день будет тёплым, уютным и наполненным хорошими моментами.</p>
+                <button class="primary-btn" id="startBtn">Начать праздник </button>
+            </div>
+        </section>
+
+        <section class="section" id="message">
+            <div class="card">
+                <p class="eyebrow">Для тебя 💌</p>
+                <h2>С днём рождения, Лизок!</h2>
+                <p>Желаю тебе побольше счастливых моментов, смешных историй, уютных вечеров и людей, рядом с которыми можно быть собой.</p>
+                <p>Пусть 21 год принесёт много нового, интересного и хорошего.</p>
+                <button class="secondary-btn" id="catsBtn">Посмотреть котиков </button>
+            </div>
+        </section>
+
+        <section class="section" id="cats">
+            <div class="card">
+                <p class="eyebrow">Специально для тебя</p>
+                <h2>Котики тоже поздравляют </h2>
+                <div class="photo-grid">
+                    <div class="photo-card"><img src="{{ url_for('static', filename='images/cat1.jpg') }}" alt="Котик 1"></div>
+                    <div class="photo-card"><img src="{{ url_for('static', filename='images/cat2.jpg') }}" alt="Котик 2"></div>
+                    <div class="photo-card"><img src="{{ url_for('static', filename='images/cat3.jpg') }}" alt="Котик 3"></div>
+                </div>
+                <p class="photo-caption" id="catCaption">Первый котик одобряет этот праздник.</p>
+                <button class="secondary-btn" id="lilyBtn">А теперь — цветы </button>
+            </div>
+        </section>
+
+        <section class="section" id="lily">
+            <div class="card">
+                <p class="eyebrow">Немного красоты</p>
+                <h2>Цветы для именинницы </h2>
+                <div class="lily-gallery">
+                    <img src="{{ url_for('static', filename='images/lily1.jpg') }}" alt="Лилия 1">
+                    <img src="{{ url_for('static', filename='images/lily2.jpg') }}" alt="Лилия 2">
+                </div>
+                <p>Пусть вокруг тебя всегда будет место для красивых и спокойных моментов.</p>
+                <button class="primary-btn" id="surpriseBtn">Последний сюрприз </button>
+            </div>
+        </section>
+    </main>
+
+    <section class="final-screen" id="finalScreen">
+        <div class="final-card">
+            <img src="{{ url_for('static', filename='images/cat3.jpg') }}" alt="Котик поздравляет" class="final-cat">
+            <p class="eyebrow">И последнее...</p>
+            <h2>С 21-летием, Лизочка! </h2>
+            <p>Пусть впереди будет много классных дней, добрых людей, путешествий, приключений и моментов, которые захочется запомнить.</p>
+            <p class="final-note">Оставайся такой же классной </p>
+            <button class="secondary-btn" id="againBtn">Посмотреть ещё раз</button>
+        </div>
+    </section>
+
+    <audio id="birthdayMusic" loop preload="auto">
+        <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+    </audio>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+</body>
+</html>
